@@ -1,0 +1,17 @@
+{%extends 'base.html'%}
+
+{%block content%}
+
+<h1>Wine section</h1>
+
+<form action="/wineSearch/" method="get">
+    <div>
+        <input type="text" placeholder="search" name="w">
+    </div>
+
+    <div>
+        <button type="submit">Search</button>
+    </div>
+</form>
+
+{%endblock%}

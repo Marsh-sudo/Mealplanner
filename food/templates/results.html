@@ -1,0 +1,32 @@
+{%extends 'base.html'%}
+
+{%block content%}
+<table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+    <th>Image</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for item in data %}
+      <tr>
+        <td>{{item.id}}</td>
+        {% if item.name %}
+          <td>{{item.name}}</td>
+        {% else %}
+          <td>{{item.title}}</td>
+        {% endif %}
+        {% if cat == "ingredients" %}
+        <td>No image available</td>
+        {% else %}
+        <td><img src="{{item.image}}" style="width:auto; height: 125px"></td> 
+        {% endif %}
+      </tr>
+    {% endfor %}
+      
+    </tbody>
+  </table>
+
+{%endblock%}

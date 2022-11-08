@@ -1,0 +1,36 @@
+{%extends 'base.html'%}
+
+{%block content%}
+
+{%for wine in data%}
+
+
+<div class="table-responsive">
+<table class="table table-hover table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Title</th>
+        <th scope="col">description</th>
+        <th scope="col">Price</th>
+        <th scope="col">Rating</th>
+        <th scope="col">Image/Logo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">{{wine.id}}</th>
+        <td>{{wine.title}}</td>
+        <td>{{wine.description}}</td>
+        <td>{{wine.price}}</td>
+        <td>{{wine.ratingCount}}</td>
+        <td><img src="{{wine.imageUrl}}" alt=""></td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+{%endfor%}
+
+{%endblock%}

@@ -1,0 +1,19 @@
+{%extends 'base.html'%}
+
+{%block content%}
+
+<h1>{{recipe.title}}</h1>
+<p>{{recipe.summary}}</p>
+<img src="{{recipe.image}}" alt="">
+
+<form action="/search/" method="get">
+    <div>
+        <input type="text" placeholder="search" name="q">
+    </div>
+
+    <div>
+        <button type="submit">Search</button>
+    </div>
+</form>
+
+{%endblock%}
