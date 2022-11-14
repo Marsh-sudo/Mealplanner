@@ -2,11 +2,14 @@ from django import forms
 from .models import User
 from django.contrib.auth.forms import UserCreationForm
 
+passwordInputWidget = {'password':forms.PasswordInput()}
+
 class SignUpForm(UserCreationForm):
     
     class Meta:
         model = User
         fields = ('username','email')
+        widgets = [passwordInputWidget]
 
         USERNAME_FIELD = 'username'
 
@@ -21,4 +24,5 @@ class SignUpForm(UserCreationForm):
 class LoginUserForm(UserCreationForm):
     class Meta:
         model = User
-        fields = ['username','password']
+        fields = ['username']
+        widgets = [passwordInputWidget]

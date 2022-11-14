@@ -14,15 +14,11 @@ User Login
 
 <!--Login--> 
 
-<div class="container py-5">
-  <h1 class="text-center">Login</h1>
-  <form method="POST" action="{% url 'login' %}" class="text-center">
-    {% csrf_token %}
-    {{ login_form|crispy }}
-    <button class="btn btn-primary" type="submit">Login</button>
-  </form>
-  <a href="/password_reset">Forgot Password</a>
-  <p class="text-center">Don't have an account? <a href="/signup">Create an account</a>.</p>
-</div>
+<form method="post">
+  {% csrf_token %}
+  {{ login_form.as_p }}
+  <button type="submit">Login</button>
+  <div>Don't have an account? <a href="/signup">Sign up</a>
+ </form>
 
 {% endblock %}
