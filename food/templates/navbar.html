@@ -1,0 +1,14 @@
+<nav class="navbar navbar-light navbar sticky-top" style="background-color: #e3f2fd;">
+    <!-- Navbar content -->
+    <form class="d-flex" action="/search/" method="get">
+        <div>
+            <input type="text" placeholder="search" name="q">
+        </div>
+    
+        <div>
+            <button type="submit">Search</button>
+        </div>
+    </form>
+    <a href="{%url 'users-profile'%}">{{user.username}}</a>
+
+  </nav>

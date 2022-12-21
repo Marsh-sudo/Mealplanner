@@ -2,25 +2,17 @@
 
 {%block content%}
 
-<div>
-    Welcome {{ user.username }}
-    <p> Name : {{ user.name }} </p>
-    <p> Username : {{ user.username }} </p>
-    <p> Email : {{ user.email }} </p>
-   </div>
 
+   <div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>Welcome Back: {{user.username}}</strong>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+
+<a href="{%url 'logout'%}">logout</a>
 <h1>{{recipe.title}}</h1>
 <p>{{recipe.summary}}</p>
 <img src="{{recipe.image}}" alt="">
 
-<form action="/search/" method="get">
-    <div>
-        <input type="text" placeholder="search" name="q">
-    </div>
 
-    <div>
-        <button type="submit">Search</button>
-    </div>
-</form>
 
 {%endblock%}
