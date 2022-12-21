@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
+from dotenv import load_dotenv
+load_dotenv()
 import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -60,8 +62,8 @@ AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
 )
 
-SOCIAL_AUTH_GITHUB_KEY = '93950d75321f667c9d77'
-SOCIAL_AUTH_GITHUB_SECRET = '994696ac28103518f132ccc06d6c94bd2e2c7990'
+SOCIAL_AUTH_GITHUB_KEY = str(os.getenv('GITHUB_KEY'))
+SOCIAL_AUTH_GITHUB_SECRET = str(os.getenv('GITHUB_SECRET'))
 
 ROOT_URLCONF = 'config.urls'
 
@@ -143,8 +145,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
-EMAIL_HOST_USER = "marshdeveloper99@gmail.com"
-EMAIL_HOST_PASSWORD = "marshk012#"
+
 
 
 # Static files (CSS, JavaScript, Images)
